@@ -1,0 +1,46 @@
+<html>
+<head>
+</head>
+<body>
+
+
+
+<script>
+	
+	var a = 0;
+	while(a < 200)
+	{
+		var btn = document.createElement("button");
+		btn.innerHTML = a;
+		document.body.appendChild(btn);
+		a++;
+	}
+	
+	var buttons = document.getElementsByTagName('button');
+	setInterval(function(){		
+			for (let i = 0; i < buttons.length; i++) {
+			
+				let button = buttons[i];
+				const randomColor = Math.floor(Math.random()*16777215).toString(16);
+				button.style.backgroundColor = "#" + randomColor;	
+				
+				var n = Math.floor(Math.random()*100);
+				button.style.width = n;
+				var n1 = Math.floor(Math.random()*100);
+				button.style.height = n1;
+				
+				var n2 = Math.floor(Math.random()*100);
+				button.style.borderRadius = n2+"px";
+				
+				document.body.style.backgroundColor = "#" + randomColor;	
+				
+				var n3 = Math.random();
+				button.style.opacity = ""+n3+"";
+			}	
+	},100);
+	
+	
+</script>
+
+</body>
+</html>
